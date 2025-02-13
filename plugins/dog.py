@@ -20,6 +20,7 @@ close_keyboard = InlineKeyboardMarkup(
 
 
 @app.on_message(filters.command(["dogs", "dog"]) & ~BANNED_USERS)
+@usu.on_message(filters.command(["dogs", "dog"]) & ~BANNED_USERS)
 async def dog(c, m: Message):
     r = requests.get("https://random.dog/woof.json")
     if r.status_code == 200:
@@ -34,6 +35,7 @@ async def dog(c, m: Message):
 
 
 @app.on_callback_query(filters.regex("refresh_dog") & ~BANNED_USERS)
+@usu.on_callback_query(filters.regex("refresh_dog") & ~BANNED_USERS)
 async def refresh_dog(c, m: CallbackQuery):
     r = requests.get("https://random.dog/woof.json")
     if r.status_code == 200:
