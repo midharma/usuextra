@@ -248,6 +248,7 @@ def isArgInt(txt) -> list:
 
 
 @app.on_message(filters.command(["q"]) & filters.reply)
+@usu.on_message(filters.command(["q"]) & filters.reply)
 async def msg_quotly_cmd(self: app, ctx: Message):
     ww = await ctx.reply_text("Tunggu sedang dibuat......")
     is_reply = False
