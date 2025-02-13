@@ -4,6 +4,7 @@ from UsuMusic.core.clone import usu
 
 
 @app.on_message(filters.command("advice"))
+@usu.on_message(filters.command("advice"))
 async def advice(_, message):
     A = await message.reply_text("...")
     res = await utils.TheApi.get_advice()
