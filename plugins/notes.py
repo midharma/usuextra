@@ -24,6 +24,7 @@ from UsuMusic.utils.functions import (
 from UsuMusic.utils.note_funcs import send_notes
 from UsuMusic.utils.keyboard import ikb
 from UsuMusic.utils.permissions import adminsOnly, member_permissions
+from UsuMusic.core.clone import usu
 
 
 def extract_urls(reply_markup):
