@@ -5,6 +5,7 @@ from UsuMusic import app
 
 
 @app.on_message(filters.command(["ig", "instagram", "reel"]))
+@usu.on_message(filters.command(["ig", "instagram", "reel"]))
 async def download_instagram_video(client, message):
     if len(message.command) < 2:
         await message.reply_text(
