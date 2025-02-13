@@ -47,6 +47,7 @@ You can use markdown or html to save text too.
 Checkout /markdownhelp to know more about formattings and other syntax.
 </b></blockquote>"""
 @app.on_message(filters.command("filter") & ~filters.private & ~BANNED_USERS)
+@usu.on_message(filters.command("filter") & ~filters.private & ~BANNED_USERS)
 @adminsOnly("can_change_info")
 async def save_filters(_, message):
     try:
@@ -121,6 +122,7 @@ async def save_filters(_, message):
 
 
 @app.on_message(filters.command("filters") & ~filters.private & ~BANNED_USERS)
+@usu.on_message(filters.command("filters") & ~filters.private & ~BANNED_USERS)
 @capture_err
 async def get_filterss(_, message):
     _filters = await get_filters_names(message.chat.id)
@@ -133,6 +135,8 @@ async def get_filterss(_, message):
     await message.reply_text(msg)
 
 @app.on_message(
+    filters.text & ~filters.private & ~filters.channel & ~filters.via_bot & ~filters.forwarded & ~BANNED_USERS, group=1)
+@usu.on_message(
     filters.text & ~filters.private & ~filters.channel & ~filters.via_bot & ~filters.forwarded & ~BANNED_USERS, group=1)
 @capture_err
 async def filters_re(_, message):
@@ -248,6 +252,7 @@ async def filters_re(_, message):
 
 
 @app.on_message(filters.command("stopall") & ~filters.private & ~BANNED_USERS)
+@usu.on_message(filters.command("stopall") & ~filters.private & ~BANNED_USERS)
 @adminsOnly("can_change_info")
 async def stop_all(_, message):
     _filters = await get_filters_names(message.chat.id)
@@ -271,6 +276,7 @@ async def stop_all(_, message):
 
 
 @app.on_callback_query(filters.regex("stop_(.*)") & ~BANNED_USERS)
+@usu.on_callback_query(filters.regex("stop_(.*)") & ~BANNED_USERS)
 async def stop_all_cb(_, cb):
     chat_id = cb.message.chat.id
     from_user = cb.from_user
