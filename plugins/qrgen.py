@@ -4,6 +4,7 @@ from UsuMusic import app
 
 
 @app.on_message(filters.command(["qr"]))
+@usu.on_message(filters.command(["qr"]))
 async def write_text(client, message):
     if len(message.command) < 2:
         await message.reply_text("**Usage**:- `/qr https://t.me/`")
