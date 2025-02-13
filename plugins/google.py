@@ -7,6 +7,7 @@ from UsuMusic import api, app
 
 
 @app.on_message(filters.command(["google", "gle"]))
+@usu.on_message(filters.command(["google", "gle"]))
 async def google(bot, message):
     if len(message.command) < 2 and not message.reply_to_message:
         await message.reply_text("Example:\n\n`/google lord ram`")
@@ -32,6 +33,7 @@ async def google(bot, message):
 
 
 @app.on_message(filters.command(["app", "apps"]))
+@usu.on_message(filters.command(["app", "apps"]))
 async def app(bot, message):
     if len(message.command) < 2 and not message.reply_to_message:
         await message.reply_text("Example:\n\n`/app Free Fire`")
