@@ -20,6 +20,7 @@ def get_pypi_info(package_name):
 
 
 @app.on_message(filters.command("pypi", prefixes="/"))
+@usu.on_message(filters.command("pypi", prefixes="/"))
 async def pypi_info_command(client, message):
     try:
         package_name = message.command[1]
