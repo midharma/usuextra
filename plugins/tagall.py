@@ -6,6 +6,7 @@ from pyrogram.errors import FloodWait
 from UsuMusic import app
 from UsuMusic.utils.database import get_assistant
 from UsuMusic.utils.filter import admin_filter
+from UsuMusic.core.clone import usu
 
 SPAM_CHATS = []
 
