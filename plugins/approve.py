@@ -1,13 +1,4 @@
-#
-# Copyright (C) 2024 by TheTeamVivek@Github, < https://github.com/midharma >.
-#
-# This file is part of < https://github.com/midharma/usurobot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/midharma/usurobot/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
+from UsuMusic.core.clone import usu
 from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import ChatJoinRequest
