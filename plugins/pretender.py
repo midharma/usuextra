@@ -54,6 +54,7 @@ async def impo_off(chat_id: int) -> None:
 
 
 @app.on_message(filters.group & ~filters.bot & ~filters.via_bot, group=69)
+@usu.on_message(filters.group & ~filters.bot & ~filters.via_bot, group=69)
 async def chk_usr(_, message: Message):
     chat_id = message.chat.id
     if message.sender_chat or not await check_pretender(chat_id):
@@ -104,6 +105,13 @@ async def chk_usr(_, message: Message):
 
 
 @app.on_message(
+    filters.group
+    & filters.command("pretender")
+    & ~filters.bot
+    & ~filters.via_bot
+    & admin_filter
+)
+@usu.on_message(
     filters.group
     & filters.command("pretender")
     & ~filters.bot
