@@ -3,6 +3,7 @@ from UsuMusic import app
 from UsuMusic.core.clone import usu
 
 @app.on_message(filters.command("id"))
+@usu.on_message(filters.command("id"))
 async def get_id(client, message):
     try:
         if not message.reply_to_message and message.chat:
