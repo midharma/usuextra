@@ -19,6 +19,7 @@ def smallcap(text):
     return text.translate(trans_table)
 
 @app.on_message(filters.command("autoapprove") & filters.group)
+@usu.on_message(filters.command("autoapprove") & filters.group)
 @adminsOnly("can_change_info")
 async def approval_command(client, message):
     chat_id = message.chat.id
@@ -55,6 +56,7 @@ async def approval_command(client, message):
 
 
 @app.on_callback_query(filters.regex("approval(.*)"))
+@usu.on_callback_query(filters.regex("approval(.*)"))
 async def approval_cb(client, cb):
     chat_id = cb.message.chat.id
     from_user = cb.from_user
@@ -101,6 +103,7 @@ async def approval_cb(client, cb):
 
 
 @app.on_message(filters.command("clearpending") & filters.group)
+@usu.on_message(filters.command("clearpending") & filters.group)
 @adminsOnly("can_restrict_members")
 async def clear_pending_command(client, message):
     chat_id = message.chat.id
@@ -155,6 +158,7 @@ async def accept(client, message: ChatJoinRequest):
 
 
 @app.on_callback_query(filters.regex("manual_(.*)"))
+@usu.on_callback_query(filters.regex("manual_(.*)"))
 async def manual(app, cb):
     chat = cb.message.chat
     from_user = cb.from_user
