@@ -5,13 +5,14 @@ from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import FloodWait
 from UsuMusic import app
 from UsuMusic.utils.permissions import adminsOnly
-
+from UsuMusic.core.clone import usu
 chatQueue = []
 
 stopProcess = False
 
 
 @app.on_message(filters.command(["zombies"]))
+@usu.on_message(filters.command(["zombies"]))
 @adminsOnly("can_restrict_members") 
 async def remove(client, message):
 
