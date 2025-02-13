@@ -8,7 +8,7 @@ from pyrogram.enums import ChatType
 from telegraph import upload_file
 from PIL import Image, ImageDraw
 import requests
-
+from UsuMusic.core.clone import usu
 from utils import get_image, get_couple, save_couple
 from UsuMusic import app
 
