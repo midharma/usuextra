@@ -20,6 +20,7 @@ close_keyboard = InlineKeyboardMarkup(
 
 
 @app.on_message(filters.command("cat") & ~BANNED_USERS)
+@usu.on_message(filters.command("cat") & ~BANNED_USERS)
 async def cat(c, m: Message):
     r = requests.get("https://api.thecatapi.com/v1/images/search")
     if r.status_code == 200:
@@ -36,6 +37,7 @@ async def cat(c, m: Message):
 
 
 @app.on_callback_query(filters.regex("refresh_cat") & ~BANNED_USERS)
+@usu.on_callback_query(filters.regex("refresh_cat") & ~BANNED_USERS)
 async def refresh_cat(c, m: CallbackQuery):
     r = requests.get("https://api.thecatapi.com/v1/images/search")
     if r.status_code == 200:
