@@ -84,6 +84,7 @@ link {link}
 
 
 @app.on_message(filters.command("info"))
+@usu.on_message(filters.command("info"))
 async def info_func(_, message: Message):
     if message.reply_to_message:
         user = message.reply_to_message.from_user.id
@@ -115,6 +116,7 @@ async def info_func(_, message: Message):
 
 
 @app.on_message(filters.command("chatinfo"))
+@usu.on_message(filters.command("chatinfo"))
 async def chat_info_func(_, message: Message):
     splited = message.text.split()
     if len(splited) == 1:
