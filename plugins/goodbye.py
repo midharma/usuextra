@@ -51,6 +51,7 @@ async def handle_left_member(member, chat):
         return
 
 @app.on_message(filters.left_chat_member & filters.group, group=6)
+@usu.on_message(filters.left_chat_member & filters.group, group=6)
 @capture_err
 async def goodbye(_, m:Message):
 
@@ -124,6 +125,7 @@ async def send_left_message(chat: Chat, user_id: int, delete: bool = False, noth
         )
 
 @app.on_message(filters.command("setgoodbye") & ~filters.private)
+@usu.on_message(filters.command("setgoodbye") & ~filters.private)
 @adminsOnly("can_change_info")
 async def set_goodbye_func(_, message):
     usage = "You need to reply to a text, gif or photo to set it as goodbye message.\n\nNotes: caption required for gif and photo."
@@ -187,6 +189,7 @@ async def set_goodbye_func(_, message):
 
 
 @app.on_message(filters.command(["delgoodbye", "deletegoodbye"]) & ~filters.private)
+@usu.on_message(filters.command(["delgoodbye", "deletegoodbye"]) & ~filters.private)
 @adminsOnly("can_change_info")
 async def del_goodbye_func(_, message):
     chat_id = message.chat.id
@@ -194,6 +197,7 @@ async def del_goodbye_func(_, message):
     await message.reply_text("goodbye message has been deleted.")
  
 @app.on_message(filters.command("goodbye") & ~filters.private)
+@usu.on_message(filters.command("goodbye") & ~filters.private)
 @adminsOnly("can_change_info")
 async def goodbye(client, message: Message):
     command = message.text.split()
