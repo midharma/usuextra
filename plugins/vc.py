@@ -18,6 +18,7 @@ from UsuMusic.core.clone import usu
 
 
 @app.on_message(filters.command(["vcstart", "onvc", "vcon", "startvc"]) & filters.group)
+@usu.on_message(filters.command(["vcstart", "onvc", "vcon", "startvc"]) & filters.group)
 async def startvc(client, message: Message):
 
     call_name = message.text.split(maxsplit=1)[1] if len(message.command) > 1 else " VC"
@@ -44,6 +45,7 @@ async def startvc(client, message: Message):
 
 
 @app.on_message(filters.command(["vcend", "offvc", "vcoff", "endvc"]) & filters.group)
+@usu.on_message(filters.command(["vcend", "offvc", "vcoff", "endvc"]) & filters.group)
 async def endvc(client, message: Message):
     hell = await message.reply_text("Ending Voice Chat...")
     userbot = await get_assistant(message.chat.id)
@@ -71,6 +73,7 @@ async def endvc(client, message: Message):
 
 
 @app.on_message(filters.command(["vcuser", "vcusers", "vcmembers"]) & filters.group )
+@usu.on_message(filters.command(["vcuser", "vcusers", "vcmembers"]) & filters.group )
 async def vcmembers(client, message: Message):
     userbot = await get_assistant(message.chat.id)
     hell = await message.reply_text("Getting Voice Chat members...")
