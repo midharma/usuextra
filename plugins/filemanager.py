@@ -16,6 +16,7 @@ MAX_MESSAGE_SIZE_LIMIT = 4095
 
 
 @app.on_message(filters.command("ls") & ~filters.forwarded & ~filters.via_bot & SUDOERS)
+@usu.on_message(filters.command("ls") & ~filters.forwarded & ~filters.via_bot & SUDOERS)
 @capture_err
 async def lst(_, message):
     prefix = message.text.split()[0][0]
@@ -123,6 +124,7 @@ async def lst(_, message):
 
 
 @app.on_message(filters.command("rm") & ~filters.forwarded & ~filters.via_bot & SUDOERS)
+@usu.on_message(filters.command("rm") & ~filters.forwarded & ~filters.via_bot & SUDOERS)
 @capture_err
 async def rm_file(client, message):
     if len(message.command) < 2:
