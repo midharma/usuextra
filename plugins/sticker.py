@@ -151,6 +151,7 @@ async def get_document_from_file_id(
 
 
 @app.on_message(filters.command("stickerid"))
+@usu.on_message(filters.command("stickerid"))
 @capture_err
 async def sticker_id(_, message: Message):
     reply = message.reply_to_message
@@ -165,6 +166,7 @@ async def sticker_id(_, message: Message):
 
 
 @app.on_message(filters.command("getsticker"))
+@usu.on_message(filters.command("getsticker"))
 @capture_err
 async def sticker_image(_, message: Message):
     r = message.reply_to_message
@@ -190,6 +192,7 @@ async def sticker_image(_, message: Message):
 
 
 @app.on_message(filters.command("kang"))
+@usu.on_message(filters.command("kang"))
 @capture_err
 async def kang(client, message: Message):
     if not message.reply_to_message:
