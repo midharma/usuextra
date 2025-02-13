@@ -118,6 +118,7 @@ async def clear_pending_command(client, message):
 
 
 @app.on_chat_join_request(filters.group)
+@usu.on_chat_join_request(filters.group)
 async def accept(client, message: ChatJoinRequest):
     chat = message.chat
     user = message.from_user
