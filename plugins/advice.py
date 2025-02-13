@@ -1,5 +1,6 @@
 from pyrogram import filters
 from UsuMusic import app
+from UsuMusic.core.clone import usu
 
 
 @app.on_message(filters.command("advice"))
