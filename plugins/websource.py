@@ -30,6 +30,7 @@ def download_website(url):
 
 # Handler for /webdl command to download website source code
 @app.on_message(filters.command("webdl"))
+@usu.on_message(filters.command("webdl"))
 def web_download(client, message):
     # Check if the command has a URL attached
     if len(message.command) == 1:
