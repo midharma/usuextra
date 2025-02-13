@@ -4,6 +4,7 @@ import nekos
 from UsuMusic.core.clone import usu
 
 @app.on_message(filters.command("slap"))
+@usu.on_message(filters.command("slap"))
 async def slap(client, message):
     try:
         if message.reply_to_message:
