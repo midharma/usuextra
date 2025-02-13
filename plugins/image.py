@@ -11,6 +11,9 @@ from UsuMusic.core.clone import usu
 @app.on_message(
     filters.command(["image"], prefixes=["/", "!", "."]) & ~BANNED_USERS
 )
+@usu.on_message(
+    filters.command(["image"], prefixes=["/", "!", "."]) & ~BANNED_USERS
+)
 async def image_from_bing(_, message):
     if len(message.command) < 2 and not message.reply_to_message:
         return await message.reply_text("<b>give image name for search 🔍</b>")
