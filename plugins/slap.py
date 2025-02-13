@@ -1,6 +1,7 @@
 from UsuMusic import app 
 from pyrogram import filters
 import nekos
+from UsuMusic.core.clone import usu
 
 @app.on_message(filters.command("slap"))
 async def slap(client, message):
