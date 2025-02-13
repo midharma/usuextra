@@ -51,6 +51,7 @@ async def handle_new_member(member, chat):
 
 
 @app.on_chat_member_updated(filters.group, group=6)
+@usu.on_chat_member_updated(filters.group, group=6)
 @capture_err
 async def welcome(_, user: ChatMemberUpdated):
     if not (
@@ -123,6 +124,7 @@ async def send_welcome_message(chat: Chat, user_id: int, delete: bool = False):
 
 
 @app.on_message(filters.command("setwelcome") & ~filters.private)
+@usu.on_message(filters.command("setwelcome") & ~filters.private)
 @adminsOnly("can_change_info")
 async def set_welcome_func(_, message):
     usage = "You need to reply to a text, gif or photo to set it as greetings.\n\nNotes: caption required for gif and photo."
@@ -186,6 +188,7 @@ async def set_welcome_func(_, message):
 
 
 @app.on_message(filters.command(["delwelcome", "deletewelcome"]) & ~filters.private)
+@usu.on_message(filters.command(["delwelcome", "deletewelcome"]) & ~filters.private)
 @adminsOnly("can_change_info")
 async def del_welcome_func(_, message):
     chat_id = message.chat.id
