@@ -15,6 +15,10 @@ SPAM_CHATS = []
     filters.command(["tagall", "allmention", "mentionall"], prefixes=["/", "@"])
     & admin_filter
 )
+@usu.on_message(
+    filters.command(["tagall", "allmention", "mentionall"], prefixes=["/", "@"])
+    & admin_filter
+)
 async def tag_all_users(_, message):
     if message.chat.id in SPAM_CHATS:
         return await message.reply_text(
@@ -182,6 +186,9 @@ async def tag_all_admins(_, message):
 @app.on_message(
     filters.command(["admins","report"], prefixes=["/", "@"]) & filters.group
 )
+@usu.on_message(
+    filters.command(["admins","report"], prefixes=["/", "@"]) & filters.group
+)
 async def admintag_with_reporting(client, message):
     if not message.from_user:
         return
@@ -229,6 +236,20 @@ async def admintag_with_reporting(client, message):
 
 
 @app.on_message(
+    filters.command(
+        [
+            "stopmention",
+            "cancel",
+            "cancelmention",
+            "offmention",
+            "mentionoff",
+            "cancelall",
+        ],
+        prefixes=["/", "@"],
+    )
+    & admin_filter
+)
+@usu.on_message(
     filters.command(
         [
             "stopmention",
