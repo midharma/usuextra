@@ -4,6 +4,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from UsuMusic import app
 from UsuMusic.utils.functions import MARKDOWN
+from UsuMusic.core.clone import usu
 
 
 @app.on_message(command("markdownhelp"))
