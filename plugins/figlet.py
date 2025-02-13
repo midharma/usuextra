@@ -25,6 +25,7 @@ def figle(text):
 
 
 @app.on_message(filters.command("figlet"))
+@usu.on_message(filters.command("figlet"))
 async def echo(bot, message):
     global text
     try:
@@ -40,6 +41,7 @@ async def echo(bot, message):
 
 
 @app.on_callback_query(filters.regex("figlet"))
+@usu.on_callback_query(filters.regex("figlet"))
 async def figlet_handler(Client, query: CallbackQuery):
     try:
         kul_text, keyboard = figle(text)
