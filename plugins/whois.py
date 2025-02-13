@@ -51,6 +51,7 @@ def FullName(user: User):
 
 
 @app.on_message(filters.command("whois"))
+@usu.on_message(filters.command("whois"))
 async def whois(client, message):
     cmd = message.command
     if not message.reply_to_message and len(cmd) == 1:
