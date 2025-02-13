@@ -197,6 +197,7 @@ async def del_welcome_func(_, message):
 
 
 @app.on_message(filters.command("getwelcome") & ~filters.private)
+@usu.on_message(filters.command("getwelcome") & ~filters.private)
 @adminsOnly("can_change_info")
 async def get_welcome_func(_, message):
     chat = message.chat
