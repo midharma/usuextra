@@ -7,6 +7,7 @@ from UsuMusic import app
 
 
 @app.on_message(filters.command("bots") & filters.group)
+@usu.on_message(filters.command("bots") & filters.group)
 async def bots(client, message):
 
     try:
