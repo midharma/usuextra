@@ -3,7 +3,7 @@ from httpx import AsyncClient, Timeout
 from pyrogram import filters
 from pyrogram.types import Message
 from UsuMusic import app
-
+from UsuMusic.core.clone import usu
 fetch = AsyncClient(
     http2=True,
     verify=False,
