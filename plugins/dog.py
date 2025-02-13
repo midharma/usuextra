@@ -7,7 +7,7 @@ from pyrogram.types import (
     InputMediaPhoto,
     Message,
 )
-
+from UsuMusic.core.clone import usu
 from config import BANNED_USERS
 from UsuMusic import app
 
