@@ -14,6 +14,7 @@ from pyrogram.types import Message
 
 from UsuMusic import app
 from UsuMusic.utils.database import get_assistant
+from UsuMusic.core.clone import usu
 
 
 @app.on_message(filters.command(["vcstart", "onvc", "vcon", "startvc"]) & filters.group)
