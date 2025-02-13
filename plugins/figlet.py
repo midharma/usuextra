@@ -7,7 +7,7 @@ from pyrogram import filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 
 from UsuMusic import app
-
+from UsuMusic.core.clone import usu
 
 def figle(text):
     x = pyfiglet.FigletFont.getFonts()
