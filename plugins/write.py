@@ -5,6 +5,7 @@ from UsuMusic import app
 
 
 @app.on_message(filters.command(["write"]))
+@usu.on_message(filters.command(["write"]))
 async def write(client, message):
     if message.reply_to_message and message.reply_to_message.text:
         txt = message.reply_to_message.text
