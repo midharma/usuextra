@@ -8,6 +8,7 @@ from UsuMusic.core.clone import usu
 
 
 @app.on_message(command("markdownhelp"))
+@usu.on_message(command("markdownhelp"))
 async def mkdwnhelp(_, m: Message):
     keyb = InlineKeyboardMarkup(
         [
