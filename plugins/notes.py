@@ -92,6 +92,7 @@ async def PrivateNote(client, message):
             )
 
 @app.on_message(filters.command("save") & filters.group & ~BANNED_USERS)
+@usu.on_message(filters.command("save") & filters.group & ~BANNED_USERS)
 @adminsOnly("can_change_info")
 async def save_notee(_, message):
     try:
@@ -164,6 +165,7 @@ async def save_notee(_, message):
 
 
 @app.on_message(filters.command("notes") & filters.group & ~BANNED_USERS)
+@usu.on_message(filters.command("notes") & filters.group & ~BANNED_USERS)
 @capture_err
 async def get_notes(_, message):
     chat_id = message.chat.id
@@ -180,6 +182,7 @@ async def get_notes(_, message):
 
 
 @app.on_message(filters.command("get") & filters.group & ~BANNED_USERS)
+@usu.on_message(filters.command("get") & filters.group & ~BANNED_USERS)
 @capture_err
 async def get_one_note(_, message):
     if len(message.text.split()) < 2:
@@ -200,6 +203,7 @@ async def get_one_note(_, message):
 
 
 @app.on_message(filters.regex(r"^#.+") & filters.text & filters.group & ~BANNED_USERS)
+@usu.on_message(filters.regex(r"^#.+") & filters.text & filters.group & ~BANNED_USERS)
 @capture_err
 async def get_one_note(_, message):
     from_user = message.from_user if message.from_user else message.sender_chat
@@ -311,6 +315,7 @@ async def get_reply(message, type, file_id, data, keyb):
 
 
 @app.on_message(filters.command("delete") & filters.group & ~BANNED_USERS)
+@usu.on_message(filters.command("delete") & filters.group & ~BANNED_USERS)
 @adminsOnly("can_change_info")
 async def del_note(_, message):
     if len(message.command) < 2:
@@ -329,6 +334,7 @@ async def del_note(_, message):
 
 
 @app.on_message(filters.command("deleteall") & filters.group & ~BANNED_USERS)
+@usu.on_message(filters.command("deleteall") & filters.group & ~BANNED_USERS)
 @adminsOnly("can_change_info")
 async def delete_all(_, message):
     _notes = await get_note_names(message.chat.id)
@@ -350,6 +356,7 @@ async def delete_all(_, message):
 
 
 @app.on_callback_query(filters.regex("delete_(.*)"))
+@usu.on_callback_query(filters.regex("delete_(.*)"))
 async def delete_all_cb(_, cb):
     chat_id = cb.message.chat.id
     from_user = cb.from_user
