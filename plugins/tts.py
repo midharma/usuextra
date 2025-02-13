@@ -7,6 +7,7 @@ from UsuMusic import app
 
 
 @app.on_message(filters.command("tts"))
+@usu.on_message(filters.command("tts"))
 async def text_to_speech(client, message):
     if len(message.command) < 2:
         return await message.reply_text(
