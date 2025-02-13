@@ -3,7 +3,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatAction
 from UsuMusic import app
 from TheApi import Client
-
+from UsuMusic.core.clone import usu
 TheApi = Client()
 
 
