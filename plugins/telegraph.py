@@ -8,6 +8,7 @@ from UsuMusic import app
 from UsuMusic.core.clone import usu
 
 @app.on_message(filters.command(["tgm", "tgt", "telegraph", "tl"]))
+@usu.on_message(filters.command(["tgm", "tgt", "telegraph", "tl"]))
 async def get_link_group(client, message):
     if not message.reply_to_message:
         return await message.reply_text(
