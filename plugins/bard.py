@@ -5,6 +5,7 @@ from UsuMusic import api, app
 
 
 @app.on_message(filters.command(["bard"]))
+@usu.on_message(filters.command(["bard"]))
 async def bard(bot, message):
     if len(message.command) < 2 and not message.reply_to_message:
         await message.reply_text(
