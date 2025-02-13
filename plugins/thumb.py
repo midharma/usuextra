@@ -25,6 +25,9 @@ def extract_video_id(url):
 @app.on_message(
     filters.command(["getthumb", "genthumb", "thumb", "thumbnail"], prefixes="/")
 )
+@usu.on_message(
+    filters.command(["getthumb", "genthumb", "thumb", "thumbnail"], prefixes="/")
+)
 async def get_thumbnail_command(client, message):
     if len(message.command) < 2:
         return await message.reply_text(
