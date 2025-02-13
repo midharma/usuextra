@@ -6,6 +6,7 @@ from config import BANNED_USERS
 from UsuMusic import app
 from pyrogram import filters
 from pyrogram.errors.exceptions.flood_420 import FloodWait
+from UsuMusic.core.clone import usu
  
 @app.on_message(
     filters.command(["image"], prefixes=["/", "!", "."]) & ~BANNED_USERS
