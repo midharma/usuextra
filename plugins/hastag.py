@@ -5,6 +5,7 @@ from UsuMusic import app
 from UsuMusic.core.clone import usu
 
 @app.on_message(filters.command("hastag"))
+@usu.on_message(filters.command("hastag"))
 async def hastag(bot, message):
 
     try:
