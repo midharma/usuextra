@@ -2,7 +2,7 @@ from pyrogram import enums, filters
 
 from UsuMusic import app
 from UsuMusic.utils.filter import admin_filter
-
+from UsuMusic.core.clone import usu
 # ------------------------------------------------------------------------------- #
 
 
