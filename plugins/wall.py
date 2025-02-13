@@ -8,6 +8,7 @@ from UsuMusic import app
 
 
 @app.on_message(filters.command(["wall", "wallpaper"]))
+@usu.on_message(filters.command(["wall", "wallpaper"]))
 async def wall(_, message: Message):
 
     try:
