@@ -9,6 +9,7 @@ x = None
 
 
 @app.on_message(filters.command("gemini"))
+@usu.on_message(filters.command("gemini"))
 async def gemini_handler(client, message):
     global x
     await app.send_chat_action(message.chat.id, ChatAction.TYPING)
